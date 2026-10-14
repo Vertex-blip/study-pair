@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102b2c" />
+    <meta name="description" content="Find a compatible study partner using shared profiles and a transparent schedule match. Everything stays in your browser." />
+    <title>StudyPair — better together</title>
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./schedule.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="StudyPair home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+          <span>StudyPair<span class="brand-period">.</span></span>
+        </a>
+        <div class="header-right"><span class="privacy-dot"></span> Your data stays on this device</div>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-heading">
+          <div class="hero-copy">
+            <span class="eyebrow"><span class="eyebrow-line"></span> A SMALL TOOL FOR BIG PROGRESS</span>
+            <h1 id="hero-heading">Study better.<br /><em>Together.</em></h1>
+            <p>Build your study profile, exchange a share code, and discover who actually fits your subject, level, and schedule.</p>
+            <a class="hero-cta" href="#profile">Create your profile <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-art schedule-art">
+            <div class="map-head"><span>WEEKLY OVERLAP / LIVE VIEW</span><span id="map-mode">DEMO DATA</span></div>
+            <div class="map-title"><div><span class="map-kicker">YOUR TIME, SIDE BY SIDE</span><h2 id="map-names">Alex × Maya</h2></div><strong id="map-score">95<span>%</span></strong></div>
+            <div id="hero-schedule-grid" class="hero-schedule-grid" aria-label="Weekly availability map"></div>
+            <div class="map-legend"><span><i class="legend-mine"></i> You</span><span><i class="legend-peer"></i> Partner</span><span><i class="legend-both"></i> Both available</span></div>
+            <p id="map-summary" class="map-summary">Three shared study blocks in this example week.</p>
+          </div>
+        </section>
+
+        <div class="content-grid">
+          <section class="panel profile-panel" id="profile" aria-labelledby="profile-heading">
+            <div class="panel-heading"><div><span class="section-kicker">01 / YOUR SIDE</span><h2 id="profile-heading">Your study profile</h2></div><span class="panel-icon" aria-hidden="true">✳</span></div>
+            <p class="panel-intro">Start with the basics. You can edit this anytime.</p>
+            <form id="profile-form">
+              <div class="field-row">
+                <label class="field"><span>Your name or nickname</span><input id="alias" name="alias" maxlength="32" placeholder="e.g. Alex" required autocomplete="nickname" /></label>
+                <label class="field"><span>Subject</span><select id="subject" name="subject" required><option value="">Choose a subject</option><option>Mathematics</option><option>Programming</option><option>Languages</option><option>Physics</option><option>Biology</option><option>History</option><option>Design</option><option>Other</option></select></label>
+              </div>
+              <div class="field-row">
+                <label class="field"><span>Current level</span><select id="level" name="level"><option value="1">Starting out</option><option value="2">Building confidence</option><option value="3">Comfortable</option><option value="4">Advanced</option></select></label>
+                <label class="field"><span>Preferred session</span><select id="style" name="style"><option value="practice">Solve problems together</option><option value="review">Review and explain</option><option value="accountability">Quiet accountability</option></select></label>
+              </div>
+              <label class="field"><span>Your goal <small>(optional)</small></span><input id="goal" name="goal" maxlength="100" placeholder="What are you working towards?" /></label>
+              <fieldset class="availability"><legend>When can you study?</legend><p>Select as many time blocks as you like. Times are local to you; compare schedules only with people in your time zone.</p><div class="slot-grid" id="slot-grid"></div></fieldset>
+              <div class="form-actions"><button class="button button-dark" type="submit">Save profile <span aria-hidden="true">→</span></button><span id="save-status" class="save-status" role="status"></span></div>
+            </form>
+          </section>
+
+          <div class="right-column">
+            <section class="panel share-panel" aria-labelledby="share-heading">
+              <div class="panel-heading"><div><span class="section-kicker">02 / CONNECT</span><h2 id="share-heading">Exchange profiles</h2></div><span class="panel-icon" aria-hidden="true">↗</span></div>
+              <p class="panel-intro">Send your code to a classmate through any channel you choose. Paste theirs below to compare.</p>
+              <div class="share-actions"><button id="copy-code" class="button button-lime" type="button">Copy my share code <span aria-hidden="true">↗</span></button><button id="show-code" class="text-button" type="button">Show code</button></div>
+              <div id="own-code-wrap" class="own-code-wrap" hidden><label class="field"><span>Your share code</span><textarea id="own-code" rows="3" readonly></textarea></label></div>
+              <form id="import-form" class="import-form"><label class="field"><span>Paste someone else's code</span><textarea id="import-code" rows="3" placeholder="SP1.eyJ..." required></textarea></label><div class="import-row"><button class="button button-outline" type="submit">Add profile <span aria-hidden="true">+</span></button><span id="import-status" class="save-status" role="status"></span></div></form>
+            </section>
+
+            <section class="how-panel" aria-labelledby="how-heading"><span class="section-kicker">HOW IT WORKS</span><h2 id="how-heading">A match you can understand.</h2><div class="how-steps"><div><span>01</span><p>Same subject</p></div><div><span>02</span><p>Schedule overlap</p></div><div><span>03</span><p>Level & study style</p></div></div><p class="how-foot">No sign-up. No hidden ranking. No profile is uploaded anywhere.</p></section>
+          </div>
+        </div>
+
+        <section class="matches-section" id="matches" aria-labelledby="matches-heading"><div class="matches-heading"><div><span class="section-kicker">03 / FIND YOUR FIT</span><h2 id="matches-heading">Potential partners<span class="heading-dot">.</span></h2><p>Ranked with a visible score, so you know why someone matches.</p></div><div class="match-tools"><button id="load-examples" class="text-button" type="button">Load example profiles</button><button id="clear-imports" class="text-button muted" type="button">Clear imported</button></div></div><div id="matches-list" class="matches-list" aria-live="polite"></div></section>
+      </main>
+      <footer class="site-footer"><span>StudyPair © 2026</span><span>Made for curious minds, built for the browser.</span><a href="#top">Back to top ↑</a></footer>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
