@@ -1,0 +1,41 @@
+.brand {
+  gap: 10px;
+  font-size: 22px;
+  letter-spacing: -1.3px;
+}
+
+.brand-symbol {
+  display: block;
+  flex: none;
+  width: 37px;
+  height: 37px;
+  overflow: visible;
+}
+
+.brand-symbol rect {
+  fill: none;
+  stroke: #173031;
+  stroke-width: 2.5;
+}
+
+.brand-symbol path {
+  fill: #d9f57e;
+  stroke: #173031;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.brand-name > span {
+  color: #4d7854;
+}
+
+@media (max-width: 600px) {
+  .brand {
+    font-size: 20px;
+  }
+
+  .brand-symbol {
+    width: 34px;
+    height: 34px;
+  }
+}
